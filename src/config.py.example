@@ -1,0 +1,5 @@
+__username__ = "passman"
+__host__ = "your_server_host" # Enable SSL for safety.
+__password__ = "your_super_secret_password"
+__database__ = "passman"
+__key__=b"your_super_secret_key"
