@@ -6,6 +6,15 @@ from src.config import __username__, __password__, __host__, __database__
 db = mysql.connector.connect(user=__username__, password=__password__, host=__host__, database=__database__)
 cr = db.cursor()
 
+title = """
+██████╗  █████╗ ███████╗███████╗███╗   ███╗ █████╗ ███╗   ██╗
+██╔══██╗██╔══██╗██╔════╝██╔════╝████╗ ████║██╔══██╗████╗  ██║
+██████╔╝███████║███████╗███████╗██╔████╔██║███████║██╔██╗ ██║
+██╔═══╝ ██╔══██║╚════██║╚════██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+██║     ██║  ██║███████║███████║██║ ╚═╝ ██║██║  ██║██║ ╚████║
+╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝                                                                                   
+"""
+
 sql = """
 CREATE TABLE [IF NOT EXISTS] `store`(
 	`service` VARCHAR(50) NOT NULL,
@@ -23,6 +32,7 @@ CREATE TABLE [IF NOT EXISTS] `kvdb` (
 );
 """
 def main():
+    print(title)
     cli.app(prog_name=__app_name__)
     cr.execute(sql)
     db.close()
